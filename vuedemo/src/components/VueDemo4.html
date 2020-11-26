@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue 组件</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <h1>欢迎你</h1>
+    <yi-xiu v-bind:qin="item" v-for="item in items"></yi-xiu>
+  </div>
+  <script>
+    // 定义一个 Vue 组件 Component
+    Vue.component('yi-xiu', {
+      props: ['qin'],
+      template: '<li>课程-{{qin}}</li>'
+    });
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        items: ["Java", "Linux", "Python"]
+      }
+    })
+  </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue入门</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+<!--view层：模板-->
+  <div id="app">
+    {{message}}
+    <span v-bind:title="message">
+      鼠标悬停查看效果！！
+    </span>
+  </div>
+  <script>
+    var vm = new Vue({
+      el:"#app",
+      // model层：数据
+      data:{
+        message:"Hello Vue！"
+      }
+    });
+  </script>
+</body>
+</html>

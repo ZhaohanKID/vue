@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>双向绑定</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <!--文本输入框：<input type="text" v-model="message">{{message}}-->
+    请选择您最爱吃的水果：
+    <!--<select v-model="suibian">
+      <option disabled value="">&#45;&#45;请选择&#45;&#45;</option>
+      <option>苹果</option>
+      <option>香蕉</option>
+      <option>西瓜</option>
+      <option>橘子</option>
+    </select>-->
+    <input type="radio" name="sex" value="男" v-model="suibian"> 男
+    <input type="radio" name="sex" value="女" v-model="suibian"> 女
+    <p>
+      您选择的是：{{suibian}}
+    </p>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        suibian: ""
+      }
+    })
+  </script>
+</body>
+</html>

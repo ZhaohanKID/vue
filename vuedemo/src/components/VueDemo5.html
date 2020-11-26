@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Axios异步通信</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <style>
+    [v-clock]{
+      display: none;
+    }
+  </style>
+</head>
+<body>
+<!--注：如果网速较慢，则vue会出现闪动的问题，也就是会闪出{{message}}这样一个东西，然后才显示数据-->
+  <div id="vue" v-clock>
+    <div>{{info.name}}</div>
+    <div>{{info.address.street}}</div>
+    <a v-bind:href="info.url">超链接</a>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: "#vue",
+      // data 属性   data()方法
+      data() {
+        return {
+          info: {
+            name: null,
+            url: null,
+            address: {
+              street: null,
+              city: null,
+              country: null
+            }
+          }
+        }
+      },
+      mounted() { // 钩子函数，链式编程 ES6新特性
+        axios.get('data.json').then(response=>(this.info = response.data));
+      }
+    })
+  </script>
+</body>
+</html>

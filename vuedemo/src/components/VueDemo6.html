@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <p>currentTime1 = {{currentTime1()}}</p>
+    <p>currentTime2 = {{currentTime2}}</p>
+  </div>
+  <script>
+    var vm = new Vue({
+      el: "#app",
+      data: {
+        message: "Hello World！"
+      },
+      methods: {
+        currentTime1: function () {
+          return Date.now();
+        }
+      },
+      computed: {
+        currentTime2: function () {
+          return Date.now();
+        }
+      }
+    })
+  </script>
+</body>
+</html>

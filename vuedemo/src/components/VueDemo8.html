@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>组件</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <new-title></new-title>
+  </div>
+  <script>
+    Vue.component('new-title', {
+      template: '<h1>新的标签</h1>'
+    });
+    var vm = new Vue({
+      el: "#app"
+    })
+  </script>
+</body>
+</html>
