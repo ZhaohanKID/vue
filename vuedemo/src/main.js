@@ -4,6 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// 路由
+import VueRouter from "vue-router";
+// 显式的声明使用
+Vue.use(VueRouter);
+
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

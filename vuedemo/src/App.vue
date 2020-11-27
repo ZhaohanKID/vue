@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+<!--    <img src="./assets/logo.png">-->
+    <router-link to="/main">首页</router-link>
+    <router-link to="/content">内容页</router-link>
+    <router-link to="/weima">创业公司</router-link>
     <router-view/>
   </div>
 </template>
